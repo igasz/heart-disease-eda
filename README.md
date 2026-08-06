@@ -1,0 +1,41 @@
+# Heart Disease Exploratory Data Analysis (EDA) 🫀
+**Author:** Iga Szaflik
+
+This repository contains a comprehensive Exploratory Data Analysis (EDA) of a clinical Heart Disease dataset. The goal of this project is to investigate the mathematical and statistical relationships between various medical test results and the likelihood of a heart disease diagnosis.
+
+## Project Overview
+This project focuses heavily on **Data Understanding, Feature Engineering, and Data Visualization**. By using custom `matplotlib` charts, the analysis uncovers several highly counterintuitive medical trends within the data that simple predictive models might misinterpret without proper context.
+
+## Technologies Used
+* **Python 3.x**
+* **Pandas** (Data manipulation, grouping, binning, and statistical aggregations)
+* **Matplotlib** (Advanced visualizations: Heatmaps, Boxplots, Grouped Bar Charts, and Multivariate Bubble Charts)
+* **Jupyter Notebook** (Interactive environment)
+
+## Key Insights Discovered
+During the analysis, several fascinating patterns emerged:
+1. **The "Typical Angina" Paradox:** Patients diagnosed with "Typical Angina" (Type 0) actually had the *lowest* rate of heart disease in this sample (~24.5%), whereas "Atypical" and "Non-anginal" pain types were major red flags (over 75% diagnosis rate).
+![Chest Pain Frequency](images/chest_pain.png)
+1. **The Thalach Anomaly:** In this specific dataset, patients who achieved a *higher* maximum heart rate (`thalach`) during stress tests were significantly more likely to be diagnosed with heart disease, pushing close to their theoretical physical limits (`220 - age`).
+![Multivariate Analysis](images/multivariate.png)
+1. **Strongest Predictors:** The mathematical correlation matrix proved that ST depression (`oldpeak`) and exercise-induced angina (`exang`) have the strongest predictive power, showing a powerful *inverse* relationship with the disease.
+![Correlation Heatmap](images/correlation-matrix.jpg)
+
+## How to Run the Project
+1. Clone this repository to your local machine:
+   ```bash
+   git clone [https://github.com/YOUR_USERNAME/heart-disease-eda.git](https://github.com/igasz/heart-disease-eda.git)
+   ```
+2. Navigate to the project directory and install the required dependencies:
+    ```bash
+    pip install pandas matplotlib numpy
+    ```
+3. Open the Jupyter Notebook:
+    ```bash
+    jupyter notebook heart_disease_eda.ipynb
+    ```
+
+*(Note: Make sure the heart.csv file is located in the same directory as the notebook).*
+
+## Dataset Details
+The dataset used in this project is a popular Kaggle version of the Cleveland Heart Disease dataset, containing 1025 rows and 14 clinical attributes (such as age, sex, chest pain type, resting blood pressure, cholesterol, etc.).
